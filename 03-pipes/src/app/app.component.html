@@ -1,0 +1,124 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">PIPE</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>Uppercase</td>
+        <td>{{nombre | uppercase}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>Lowercase</td>
+        <td>{{nombre | lowercase}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>Slice:3</td>
+        <td>{{nombre | slice:3}}</td>
+      </tr>
+      <tr>
+        <td>{{nombre}}</td>
+        <td>Slice:0:3</td>
+        <td>{{nombre | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <td>{{arreglo}}</td>
+        <td>Slice:1:5</td>
+        <td>{{arreglo | slice:1:5}}</td>
+      </tr>
+      <tr>
+        <td>{{PI}}</td>
+        <td>Number '3.0-0'</td>
+        <td>{{PI | number:'3.0-0'}}</td>
+      </tr>
+      <tr>
+        <td>{{PI}}</td>
+        <td>Number '1.0-2'</td>
+        <td>{{PI | number:'1.0-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{porcentaje}}</td>
+        <td>Percent</td>
+        <td>{{porcentaje | percent}}</td>
+      </tr>
+      <tr>
+        <td>{{porcentaje}}</td>
+        <td>Percent '2.2-2'</td>
+        <td>{{porcentaje | percent:'2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td>{{moneda}}</td>
+        <td>Currency </td>
+        <td>{{moneda | currency}}</td>
+      </tr>
+      <tr>
+        <td>{{moneda}}</td>
+        <td>Currency 'EUR'</td>
+        <td>{{moneda | currency:'EUR'}}</td>
+      </tr>
+      <tr>
+        <td>{{moneda}}</td>
+        <td>Currency 'EUR':'4.0-0'</td>
+        <td>{{moneda | currency:'EUR':true:'4.0-0'}}</td>
+      </tr>
+      <tr>
+        <td>{{valorPromesa}}</td>
+        <td>Async</td>
+        <td>{{valorPromesa | async}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>Date</td>
+        <td>{{fecha | date}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>Date 'medium'</td>
+        <td>{{fecha | date:'medium'}}</td>
+      </tr>
+      <tr>
+        <td>{{fecha}}</td>
+        <td>Date 'dd - MMMM'</td>
+        <td>{{fecha | date:'dd - MMMM'}}</td>
+      </tr>
+      <tr>
+        <td>{{nombreCompleto}}</td>
+        <td>Capitalizado</td>
+        <td>{{nombreCompleto | Capitalizado}}</td>
+      </tr>
+      <tr>
+        <td>{{nombreCompleto}}</td>
+        <td>Capitalizado Priemra</td>
+        <td>{{nombreCompleto | Capitalizado:false}}</td>
+      </tr>
+      <tr>
+        <td>{{contrasena}}</td>
+        <td>contraseña: {{activar}}
+            <br>
+            <button (click)="activar=!activar" type="button" class="btn btn-danger">Activar/Desactivar</button>
+        </td>
+        <td>{{contrasena | contrasena:activar}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4>JSON:</h4>
+  <pre>{{heroe | json}}</pre>
+  <br>
+
+  <h4>Youtube</h4>
+  <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
